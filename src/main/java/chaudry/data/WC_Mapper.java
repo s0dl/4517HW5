@@ -16,6 +16,7 @@ public class WC_Mapper extends MapReduceBase implements Mapper<LongWritable,Text
     public void map(LongWritable key, Text value,OutputCollector<Text,IntWritable> output,
                     Reporter reporter) throws IOException{
         String line = value.toString();
+        line = line.replaceAll("[^a-zA-Z0-9\\s]", "");
         StringTokenizer  tokenizer = new StringTokenizer(line);
         while (tokenizer.hasMoreTokens()){
             word.set(tokenizer.nextToken());
