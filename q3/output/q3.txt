@@ -1,0 +1,6 @@
+1. Number of unique terms
+1426 /home/ubuntu/q3/output/all_results.txt
+2. 5th to last term with its word count
+xxxiii	1
+3. 1st term with its word count
+abhorrence	6
