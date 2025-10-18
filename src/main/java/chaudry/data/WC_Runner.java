@@ -19,6 +19,7 @@ public class WC_Runner {
         conf.setMapperClass(WC_Mapper.class);
         conf.setCombinerClass(WC_Reducer.class);
         conf.setReducerClass(WC_Reducer.class);
+        conf.setNumReduceTasks(5); // Setting number of reducers to 5
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
         FileInputFormat.setInputPaths(conf,new Path(args[0]));
