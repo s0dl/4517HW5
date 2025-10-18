@@ -24,7 +24,7 @@ hadoop jar $Q3_HOME/q3JavaProject/target/hw5-1.0-SNAPSHOT.jar chaudry.data.WC_Ru
 
 hdfs dfs -get /output/part-* $Q3_HOME/output/wc_results
 cat $Q3_HOME/output/wc_results/part-00000 > $Q3_HOME/output/all_results.txt
-echo "1. Number of unique terms" >> $Q3_HOME/output/q3.txt
+echo "1. Number of unique terms shown by lines of all_results.txt" >> $Q3_HOME/output/q3.txt
 wc -l $Q3_HOME/output/all_results.txt >> $Q3_HOME/output/q3.txt
 sort $Q3_HOME/output/all_results.txt >> $Q3_HOME/output/sorted_results.txt
 echo "2. 5th to last term with its word count" >> $Q3_HOME/output/q3.txt
