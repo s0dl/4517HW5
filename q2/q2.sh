@@ -1,5 +1,5 @@
 #!/bin/bash
-Q2_HOME=/home/ubuntu/q2
+Q2_HOME=$(pwd)
 
 if hdfs dfs -test -d "/input"; then
 	hdfs dfs -rm -r /input
@@ -21,7 +21,7 @@ echo "The catastrophe of Mansfield Park is admittedly theatrical, the hero and h
 hdfs dfs -mkdir /input
 hdfs dfs -put $Q2_HOME/input/s1.txt $Q2_HOME/input/s2.txt $Q2_HOME/input/s3.txt /input
 
-echo "Running custom jar that removes punctuation and has explicitly 3 Mappers"
+echo "Running custom jar that removes punctuation"
 hadoop jar $Q2_HOME/q2JavaProject/target/hw5-1.0-SNAPSHOT.jar chaudry.data.WC_Runner /input /output
 hdfs dfs -cat /output/part-00000 > $Q2_HOME/output/q2_removed.txt
 
